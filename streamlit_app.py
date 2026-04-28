@@ -173,10 +173,10 @@ if analyze_btn or True:  # Always show on load with defaults
 
     st.markdown("---")
 
-    # ── Row 3: Top Career Cards ───────────────────────────────
-    st.markdown("#### 🏆 Top Career Recommendations")
+    # ── Row 3: Top Career Cards (TOP 5 RECOMMENDATIONS) ────────
+    st.markdown("#### 🏆 Top 5 Career Recommendations")
 
-    for i, rec in enumerate(recs[:3]):
+    for i, rec in enumerate(recs[:5]):  # Changed from [:3] to [:5] for Top 5
         with st.expander(
             f"#{i+1}  {rec['career']}  —  Match: {rec['match_score']:.1f}%  |  Skill Coverage: {rec['skill_coverage']:.1f}%  |  💰 ${rec['avg_salary']:,}/yr  |  📈 {rec['growth_rate']} Growth",
             expanded=(i == 0)
